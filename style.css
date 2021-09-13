@@ -16,22 +16,7 @@
     position: sticky;
     top: 0;
     z-index: 999; 
-
-
 }
-
-.navbar__container {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
-
-}
-
 #navbar__logo {
     background-color: #ff8177;
     background-image: linear-gradient (to top, #ff0844 0%, #ffb199 100%);
@@ -45,11 +30,27 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
+    padding-left: 25px;
 
-
+   
 
 
 }
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+   
+
+}
+
+
 
 .navbar__menu {
     display: flex;
@@ -92,7 +93,9 @@
     border: none;
     outline: none;
     border-radius: 4px;
+    
   /*This is where things get interesting */
+  
     background: #833ab4;
     background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4 );
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4 );
@@ -106,7 +109,8 @@
     transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 960px) {
+
+/*@media screen and (max-width: 960px) { */
     .navbar__container {
         display: flex;
         justify-content: space-between;
@@ -134,13 +138,10 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 60vh;
+        height: 100vh;
         font-size: 1.6 rem;
     }
-    #navbar__logo {
-        padding-left: 25px;
-
-    }
+    
     .navbar__toggle .bar {
         width: 25px;
         height: 3px;
@@ -195,7 +196,20 @@
     #mobile-menu.is-active .bar:nth-child(3) {
        transform: translateY(-8px) rotate(-45deg)
     }
-}
+/*}*/
+    .navbar__hamberger .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+        padding-right: 25px;
+
+    }
+        .navbar__hamberger .bar {
+        display: block; 
+        cursor: pointer;
+    }
 
 /* This is the Khai secton or landing page */
 .khai {
