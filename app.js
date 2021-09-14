@@ -14,4 +14,25 @@ const mobileMenu = () => {
 
 menu.addEventListener('click', mobileMenu)
 
-// we have to add to the html file to acgive it
+// we have to add to the html file to active it
+
+// This is the darkmode toggle
+
+function change() {
+    document.body.classList.toggle("dark-mode");
+
+
+if (document.body.classList.contains('dark-mode')) {//when the body has the class 'dark' currently
+    localStrorage.setItem('darkMode', 'enable'); //store this data if the darkmode is on
+ 
+}
+else {
+    localStorage.setItem ('darkMode', 'disable'); // store this data when the dark mode is off
+}
+};
+
+if (localStorage.getItem('darkMode') == 'enabled' ){
+    document.body.classList.toggle('dark-mode');
+}
+
+
