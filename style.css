@@ -11,10 +11,7 @@
 
 
 
-body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-}
+
 body {
     min-height: 100%;
     width: 100%;
@@ -27,6 +24,7 @@ body {
     -webkit-text-size-adjust: 100%;
     color: #0f141e;
     overflow-x: hidden;
+    display: block;
 }
 
 
@@ -36,20 +34,19 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 .navbar {
-    background: #131313;
-    height: 80px;
+    background: #000;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
-    z-index: 999; 
+    z-index: 99; 
+    padding-bottom: 20px;
 }
 #navbar__logo {
     background-color: #ff8177;
-    background-image: linear-gradient (to top, #ff0844 0%, #ffb199 100%);
-    background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -58,8 +55,9 @@ html {
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
     padding-left:40px;
+    padding-top: 15px;
+   
 
    
 
@@ -69,7 +67,7 @@ html {
 .navbar__container {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 800px;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -101,6 +99,7 @@ html {
     text-decoration: none;
     height: 100%;
     transition: all 1s ease;
+    font-size: 6rem;
 }
 
 .navbar__btn {
@@ -109,6 +108,7 @@ html {
     align-items: center;
     padding: 0 1rem;
     width: 100%;
+    font-size: 4rem;
 }
 
 .button {
@@ -125,16 +125,16 @@ html {
     
   /*This is where things get interesting */
   
-    background: #833ab4;
-    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4 );
-    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4 );
+    background: #ff8177;
+    
+    
     color: #fff;
     transition: all 0.3s ease;
 
 }
 
 .navbar__links:hover {
-    color: #9518fc;
+    color: #ff8177;
     transition: all 0.3s ease;
 }
 
@@ -154,9 +154,9 @@ html {
         display:grid;
         grid-template-columns: auto;
         margin: 0;
-        width: 100%;
+        width: 85%;
         position: absolute;
-        top : -1000px;
+        top : -1010px;
         opacity: 1;
         transition: all 0.5 s ease;
         z-index: -1;
@@ -165,11 +165,12 @@ html {
     .navbar__menu.active {
         background: #131313;
         top: 100%;
-        opacity: 1;
+        opacity: 100%;
         transition: all 0.5s ease;
-        z-index: 99;
+        z-index:  99;
         height: 100vh;
         font-size: 1.6 rem;
+        position: left;
     }
     
     .navbar__toggle .bar {
@@ -290,6 +291,56 @@ html {
 /*This class is for the main landing page background color */
 .hero {
     background: #000;
+    
+}
+.hero .big__box {
+    position: relative;
+    width: 70vh;
+    height: 90vh;
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.hero .big__box .effect {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+   
+}
+
+.hero .big__box .effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: scale(0.1);
+    box-shadow: 0 0 10px #000,
+    0 0 20px #000,
+    0 0 30px #000,
+    0 0 40px #000,
+    0 0 50px #000,
+    0 0 60px #000,
+    0 0 70px #000,
+    0 0 80px #000,
+    0 0 90px #000,
+    0 0 100px #000;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 2s;
+
+}
+
+.hero .big__box .effect:hover::before {
+    transform: scale(1);
+    transition: 0s;
+    background-color: #fff;
+  
 }
 
 /*This class is for the hero container which is left and right column */
@@ -309,7 +360,7 @@ html {
     align-items: flex-start;
     color: #fff;
     padding: 0rem 2rem;
-    
+    padding-top: 50px;
 
 }
 h5 {
@@ -335,7 +386,7 @@ h5 {
     -webkit-margin-after: 0;
 }
 /*This class is for the heading of the left */
-.column-left h1 {
+h1 {
     font-size: 4.5rem;
     line-height: 4.6875rem;
     padding-top: 5px;
@@ -349,14 +400,14 @@ h5 {
 
 }
 
-.column-left h3 {
+ h3 {
     font-size: 1.375rem;
-    line-height: 1.875rem;
+    line-height: 2rem;
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    letter-spacing: normal;
-    font-weight: 500;
+    letter-spacing: 2px;
+    font-weight: 1000;
 }
 /*This class is for the paragrap in the left box */
 .column-left p {
@@ -392,14 +443,17 @@ h5 {
 }
 a.special {
     position: relative;
-    color: #fff;
+    color: #ff8177;
     border: 0 none;
     display: inline-block;
     line-height: 1;
     text-decoration: none;
+    transition: background 60s color 60s;
 }
 a.special:hover{
-    text-decoration: underline;
+    
+    background: #ff8177;
+    color: #fff;
 }
 
 nav.links span {
@@ -466,18 +520,18 @@ img {
 .box {
     transform-style: preserve-3d;
     position: relative;
-    animation: animate 20s linear infinite;
+    animation: animate 15s linear infinite;
     width: 200px;
     height: 200px;
 }
 @keyframes animate {
     0%
     {
-        transform: perspective(1000px) rotateX(0deg) rotateY(34deg);
+        transform: perspective(2000px) rotateX(0deg) rotateY(34deg);
     }
     100% 
     {
-        transform: perspective(1000px) rotateX(360deg) rotateY(34deg);
+        transform: perspective(2000px) rotateX(360deg) rotateY(34deg);
     }
 }
 .box span {
@@ -486,9 +540,11 @@ img {
     left: 0;
     max-width: 0%;
     max-height: 2%;
-    transform-origin: center;
+    transform-origin: left;
     transform-style: preserve-3d;
-    transform: rotateX(calc(var(--i)*  45deg)) translateZ(300px);
+    transform: rotateX(calc(var(--i)* 45deg)) translateZ(300px); 
+    /*translate x is the distance from center of the circle to the element */ 
+    /*var(--i) will take the value that declared in portfolio file then transfer by multiple for 45 degree and rotate with that number */ 
 
 }
 
@@ -498,11 +554,107 @@ img {
 }
 
 .hero-social {
-    display: flex;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
     padding: 3rem calc((100vw - 1300px)/2);
-    color: #fff;
-    background: #000;
+    color: #000;
+    background: #fff;
 }
 
+.img-portfolio {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 3rem;
+    transition: width 2s, height 2s;
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
+
+
+.hero-portfolio-container {
+    margin: 160px 0 160px 0;
+    display: grid;
+    grid-template-columns: 400px 500px;
+    grid-gap: 40px 40px;
+    align-items: center;
+    justify-content: center;
+    
+        
+}
+
+.resume__button {
+    margin-top: 23px;
+    color: #ff8177;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    background: #000;
+    transition: background 1s, color 1s;
+}
+.resume__button:hover {
+    
+    background: #ff8177;
+    color: #fff;
+}
+.serect__hover_social{
+    color: #878a8f;
+    text-decoration:none;
+    transition: color .5s ;
+}
+.serect__hover {
+    color: #fff;
+    text-decoration:none;
+    transition: color .5s ;
+}
+.serect__hover:hover {
+    color: #ff8177;
+    text-decoration:none
+}
+
+
+.column-left-social h5 {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    padding-top: 5px;
+    text-transform: normal;
+    padding-bottom: 5px; 
+    color: #2a2a2a;
+    font-weight: 300;
+    letter-spacing: 0.17em;
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+.column-left-social h3 {
+    position: relative;
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 24px;
+    letter-spacing: normal;
+    font-weight: 1000;
+    color: #ff8177;
+}
+
+.column-left:hover {
+   
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 3px 4px 5px #fff;
+    transition: 1s;
+}
+
+.hero-container-social {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   
+}

@@ -35,4 +35,6 @@ if (localStorage.getItem('darkMode') == 'enabled' ){
     document.body.classList.toggle('dark-mode');
 }
 
+//Draw with me function
 
+//Cursors
