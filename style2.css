@@ -104,7 +104,10 @@ a {
 }
 
 .gallery__img {
-  width: 100%;
+    width: 480px;
+    height: 100%;
+    margin: auto;
+    display: flex;
 }
 
 .section--contact {
@@ -160,3 +163,10 @@ a {
   background-color: #ffd200;
 }
 
+canvas {
+ 
+
+    margin: auto;
+    display: flex;
+  
+}

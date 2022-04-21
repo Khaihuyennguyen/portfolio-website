@@ -20,7 +20,7 @@ const handleMouseUp = () => {
 
 const handleMouseMove = (event) => {
   const scrollAmount = document.scrollingElement.scrollTop;
-  const paintbrushHeight = paintbrush.naturalHeight;
+  const paintbrushHeight = 5;
   const paintLimit = window.innerHeight - paintbrushHeight;
   const left = event.clientX;
   const top = Math.min(paintLimit, event.clientY + scrollAmount);
@@ -29,7 +29,7 @@ const handleMouseMove = (event) => {
 
 const handleTouchMove = (event) => {
   const scrollAmount = document.scrollingElement.scrollTop;
-  const paintbrushHeight = paintbrush.naturalHeight;
+  const paintbrushHeight = 5;
   const paintLimit = window.innerHeight - paintbrushHeight;
   const left = event.touches[0].clientX;
   const top = Math.min(paintLimit, event.touches[0].clientY + scrollAmount);
@@ -42,9 +42,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 rifke = document.createElement('img');
-rifke.src = 'images/TAMU1.png';
+rifke.src = 'images/JS.png';
 dan = document.createElement('img');
-dan.src = 'images/TAMU2.png';
+dan.src = 'images/TAMU1.png';
 
 canvas.addEventListener('mousemove', handleMouseMove);
 window.addEventListener('mousedown', handleMouseDown);
